@@ -1,0 +1,113 @@
+@font-face {
+  font-family: 'Geist';
+  src: url('/fonts/Geist-Variable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geist Mono';
+  src: url('/fonts/GeistMono-Variable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 11.8%;
+    --foreground: 0 0% 94.1%;
+    --card: 0 0% 13.3%;
+    --card-foreground: 0 0% 94.1%;
+    --popover: 0 0% 13.3%;
+    --popover-foreground: 0 0% 94.1%;
+    --primary: 43 72% 52%;
+    --primary-foreground: 0 0% 11.8%;
+    --secondary: 0 0% 14.5%;
+    --secondary-foreground: 0 0% 94.1%;
+    --muted: 0 0% 14.5%;
+    --muted-foreground: 0 0% 69%;
+    --accent: 262 51% 58%;
+    --accent-foreground: 0 0% 94.1%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 100% / 0.1;
+    --input: 0 0% 100% / 0.1;
+    --ring: 43 72% 52%;
+    --radius: 0.5rem;
+    --sidebar-background: 0 0% 14.5%;
+    --sidebar-foreground: 0 0% 94.1%;
+    --sidebar-primary: 43 72% 52%;
+    --sidebar-primary-foreground: 0 0% 11.8%;
+    --sidebar-accent: 0 0% 18%;
+    --sidebar-accent-foreground: 0 0% 94.1%;
+    --sidebar-border: 0 0% 100% / 0.1;
+    --sidebar-ring: 43 72% 52%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Geist', 'Inter', ui-sans-serif, system-ui, sans-serif;
+  }
+  ::selection {
+    background: rgba(214, 158, 46, 0.3);
+    color: #f0f0f0;
+  }
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #1e1e1e;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #3e3e3e;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #505050;
+  }
+}
+
+@layer utilities {
+  .text-gradient-amber {
+    background: linear-gradient(135deg, #de970b, #d69e2e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .text-gradient-cyan {
+    background: linear-gradient(135deg, #04cd69, #95b83d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .glass-panel {
+    background: rgba(30, 30, 30, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .glow-border {
+    box-shadow: 0 0 15px rgba(214, 158, 46, 0.15);
+  }
+  .glow-border-hover:hover {
+    box-shadow: 0 0 20px rgba(214, 158, 46, 0.3);
+  }
+  .code-keyword { color: #569cd6; }
+  .code-string { color: #ce9178; }
+  .code-comment { color: #6a9955; }
+  .code-function { color: #dcdcaa; }
+  .code-number { color: #b5cea8; }
+  .code-type { color: #4ec9b0; }
+}
